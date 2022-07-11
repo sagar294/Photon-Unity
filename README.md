@@ -1,4 +1,4 @@
-# PhotonDemo
+# Photon With Unty
 
 ## Connect And Callbacks
   **ConnectUsingSettings** gets you online in no time: It grabs all important settings from the **PhotonServerSettings** asset and off you go.
