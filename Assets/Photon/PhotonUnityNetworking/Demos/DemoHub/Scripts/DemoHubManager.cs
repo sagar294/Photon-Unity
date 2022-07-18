@@ -272,14 +272,11 @@ namespace Photon.Pun.Demo.Hub
 
 		public void OpenScene()
 		{
-			currentSelection = "BasicTutorial";
 			if (string.IsNullOrEmpty(currentSelection))
 		    {
 				Debug.LogError("Bad setup, a CurrentSelection is expected at this point");
 				return;
 			}
-
-			Debug.Log(currentSelection);
 
 			SceneManager.LoadScene(_data[currentSelection].Scene);
 		}

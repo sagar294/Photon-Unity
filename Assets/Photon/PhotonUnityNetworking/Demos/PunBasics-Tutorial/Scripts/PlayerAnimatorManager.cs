@@ -27,10 +27,10 @@ namespace Photon.Pun.Demo.PunBasics
 		/// <summary>
 		/// MonoBehaviour method called on GameObject by Unity during initialization phase.
 		/// </summary>
-		void Start () 
+	    void Start () 
 	    {
 	        animator = GetComponent<Animator>();
-		}
+	    }
 	        
 		/// <summary>
 		/// MonoBehaviour method called on GameObject by Unity on every frame.
@@ -59,13 +59,13 @@ namespace Photon.Pun.Demo.PunBasics
 				// When using trigger parameter
                 if (Input.GetButtonDown("Fire2")) animator.SetTrigger("Jump"); 
 			}
-
+           
 			// deal with movement
-			float h = Joystick.Instance.Direction.x; // Input.GetAxis("Horizontal");
-            float v = Joystick.Instance.Direction.y; // Input.GetAxis("Vertical");
+            float h = Input.GetAxis("Horizontal");
+            float v = Input.GetAxis("Vertical");
 
 			// prevent negative Speed.
-			if ( v < 0 )
+            if( v < 0 )
             {
                 v = 0;
             }

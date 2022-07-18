@@ -4,7 +4,6 @@ namespace Photon.Pun.Demo.Asteroids
 {
     public class AsteroidsGame
     {
-        
         public const float ASTEROIDS_MIN_SPAWN_TIME = 5.0f;
         public const float ASTEROIDS_MAX_SPAWN_TIME = 10.0f;
 
@@ -32,7 +31,5 @@ namespace Photon.Pun.Demo.Asteroids
 
             return Color.black;
         }
-        
     }
-    
 }

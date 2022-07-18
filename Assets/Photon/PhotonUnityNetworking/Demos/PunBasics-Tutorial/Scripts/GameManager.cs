@@ -39,16 +39,15 @@ namespace Photon.Pun.Demo.PunBasics
         [Tooltip("The prefab to use for representing the player")]
         [SerializeField]
         private GameObject playerPrefab;
-		public VariableJoystick variableJoystick;
 
-		#endregion
+        #endregion
 
-		#region MonoBehaviour CallBacks
+        #region MonoBehaviour CallBacks
 
-		/// <summary>
-		/// MonoBehaviour method called on GameObject by Unity during initialization phase.
-		/// </summary>
-		void Start()
+        /// <summary>
+        /// MonoBehaviour method called on GameObject by Unity during initialization phase.
+        /// </summary>
+        void Start()
 		{
 			Instance = this;
 
@@ -71,9 +70,8 @@ namespace Photon.Pun.Demo.PunBasics
 				    Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
 
 					// we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-					GameObject g = PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f,5f,0f), Quaternion.identity, 0);
-				}
-				else{
+					PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f,5f,0f), Quaternion.identity, 0);
+				}else{
 
 					Debug.LogFormat("Ignoring scene load for {0}", SceneManagerHelper.ActiveSceneName);
 				}
@@ -166,7 +164,7 @@ namespace Photon.Pun.Demo.PunBasics
 
 			Debug.LogFormat( "PhotonNetwork : Loading Level : {0}", PhotonNetwork.CurrentRoom.PlayerCount );
 
-			PhotonNetwork.LoadLevel("PunBasics-Room for 1");// +PhotonNetwork.CurrentRoom.PlayerCount);
+			PhotonNetwork.LoadLevel("PunBasics-Room for "+PhotonNetwork.CurrentRoom.PlayerCount);
 		}
 
 		#endregion
